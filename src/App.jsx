@@ -6,9 +6,9 @@ import { useFetch } from "./hooks/useFetch";
 function App() {
   const { data, isPending, error } = useFetch();
 
-  const copy_quote = () => {
+  const copyQuote = () => {
     navigator.clipboard.writeText(
-      data.quote + " - " + data.anime + " from " + data.character
+      data.quote + " - " + data.character + " from " + data.anime
     );
   };
 
@@ -29,7 +29,7 @@ function App() {
             anime={data.anime}
           />
           <div className="btn">
-            <Button onClicks={copy_quote} text="Copy quote" />
+            <Button onClicks={copyQuote} text="Copy quote" />
           </div>
         </>
       )}
