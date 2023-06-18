@@ -7,7 +7,7 @@ export const useFetch = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch("http://animechan.melosh.space/random")
+      fetch("https://animechan.melosh.space/random")
         .then((res) => {
           if (!res.ok) {
             throw Error("could not fetch the data");
