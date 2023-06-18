@@ -28,8 +28,9 @@ function App() {
             character={data.character}
             anime={data.anime}
           />
-
-          <Button onClicks={copy_quote} text="Copy quote" />
+          <div className="btn">
+            <Button onClicks={copy_quote} text="Copy quote" />
+          </div>
         </>
       )}
     </>
