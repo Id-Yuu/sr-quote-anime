@@ -7,7 +7,7 @@ export const useFetch = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch("//animechan.melosh.space/random")
+      fetch("https://fubuki-api.vercel.app/api/v1/random")
         .then((res) => {
           if (!res.ok) {
             throw Error("could not fetch the data");
