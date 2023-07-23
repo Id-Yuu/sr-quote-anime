@@ -5,8 +5,8 @@ export const useFetch = () => {
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
   
-  const urls = "https://kyoko.rei.my.id/api/quotes.php";
-  const headers = {"X-Token": "200"}
+  const urls = "";
+  const headers = {"X-Token": ""}
   
   useEffect(() => {
     setTimeout(() => {
