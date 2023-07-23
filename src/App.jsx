@@ -8,7 +8,7 @@ function App() {
 
   const copyQuote = () => {
     navigator.clipboard.writeText(
-      data.quote + " - " + data.character + " from " + data.anime
+      data.english + " - " + data.character + " from " + data.anime
     );
   };
 
@@ -24,7 +24,7 @@ function App() {
         <>
           <Quote
             cite={data.key}
-            quote={data.quote}
+            quote={data.english}
             character={data.character}
             anime={data.anime}
           />
