@@ -7,7 +7,12 @@ export const useFetch = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch("https://kyoko.rei.my.id/api/quotes.php")
+      fetch("https://kyoko.rei.my.id/api/quotes.php", {
+        method: "GET",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
         .then((res) => {
           if (!res.ok) {
             throw Error("could not fetch the data");
