@@ -4,11 +4,17 @@ export const useFetch = () => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
-  const urls = "";
+  
+  const urls = "https://kyoko.rei.my.id/api/quotes.php";
+  const headers = {"X-Token": "200"}
   
   useEffect(() => {
     setTimeout(() => {
-      fetch(urls)
+      fetch(urls, {
+        method : "GET",
+        mode: 'cors',
+        headers: headers
+    })
         .then((res) => {
           if (!res.ok) {
             throw Error("could not fetch the data");
