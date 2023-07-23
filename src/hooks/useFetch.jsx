@@ -10,8 +10,10 @@ export const useFetch = () => {
       fetch("https://kyoko.rei.my.id/api/quotes.php", {
         method: "GET",
         headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
           "Access-Control-Allow-Origin": "*",
-          mode: "no-cors"
+          mode: "no-cors",
         },
       })
         .then((res) => {
