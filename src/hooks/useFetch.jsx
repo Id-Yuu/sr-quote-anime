@@ -7,7 +7,7 @@ export const useFetch = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch("https://fubuki-api.vercel.app/api/v1/random")
+      fetch("https://kyoko.rei.my.id/api/quotes.php")
         .then((res) => {
           if (!res.ok) {
             throw Error("could not fetch the data");
