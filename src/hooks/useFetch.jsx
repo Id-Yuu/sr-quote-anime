@@ -11,7 +11,7 @@ export const useFetch = () => {
         method: "GET",
         headers: {
           "Access-Control-Allow-Origin": "*",
-          "mode": "no-cors"
+          mode: "no-cors"
         },
       })
         .then((res) => {
