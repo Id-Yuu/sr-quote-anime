@@ -4,18 +4,11 @@ export const useFetch = () => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
-
+  const urls = "";
+  
   useEffect(() => {
     setTimeout(() => {
-      fetch("https://kyoko.rei.my.id/api/quotes.php", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          "Access-Control-Allow-Origin": "*",
-          mode: "no-cors",
-        },
-      })
+      fetch(urls)
         .then((res) => {
           if (!res.ok) {
             throw Error("could not fetch the data");
