@@ -6,7 +6,8 @@ Simple way to Showing anime random quote, build with vite reactjs.
 - Refresh
 
 ### Tech Stack
-- [Fubuki API - A free restful API serving quality anime quotes](https://fubuki-docs.vercel.app/)
+- Local DB.json
+- Axios
 - [ViteJs](https://vitejs.dev/)
 - React hooks
 - React^18.2
