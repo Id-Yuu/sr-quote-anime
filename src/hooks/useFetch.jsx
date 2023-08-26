@@ -1,37 +1,33 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 export const useFetch = () => {
-  const [data, setData] = useState(null);
-  const [isPending, setIsPending] = useState(true);
+  const [data, setData] = useState([]);
+  const [randomItem, setRandomItem] = useState({});
   const [error, setError] = useState(null);
-  
-  const urls = "";
-  const headers = {"X-Token": ""}
-  
+  const [isPending, setIsPending] = useState(true);
+
   useEffect(() => {
-    setTimeout(() => {
-      fetch(urls, {
-        method : "GET",
-        mode: 'cors',
-        headers: headers
-    })
-        .then((res) => {
-          if (!res.ok) {
-            throw Error("could not fetch the data");
-          }
-          return res.json();
-        })
-        .then((data) => {
-          setIsPending(false);
-          setData(data);
-          setError(null);
-        })
-        .catch((err) => {
-          setIsPending(false);
-          setError(err.message);
-        });
-    }, 1000);
+    async function fetchData() {
+      try {
+        const response = await axios.get("http://localhost:5000/data");
+        setData(response.data);
+        setIsPending(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setError(error);
+      }
+    }
+
+    fetchData();
   }, []);
 
-  return { data, isPending, error };
+  useEffect(() => {
+    if (data.length > 0) {
+      const randomIndex = Math.floor(Math.random() * data.length);
+      setRandomItem(data[randomIndex]);
+    }
+  }, [data]);
+
+  return { data: randomItem, isPending, error };
 };
