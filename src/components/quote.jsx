@@ -1,11 +1,11 @@
 import React from "react";
 
 export const Quote = (props) => {
-  const { cite, quote, character, anime, onClicks } = props;
+  const { anime, quote, character } = props;
   return (
     <>
-      <figure>
-        <blockquote cite={cite}>
+      <figure key={anime}>
+        <blockquote cite={anime}>
           <p>{quote}</p>
         </blockquote>
         <figcaption>
