@@ -24,10 +24,14 @@ export const useFetch = () => {
 
   useEffect(() => {
     if (data.length > 0) {
-      const randomIndex = Math.floor(Math.random() * data.length);
-      setRandomItem(data[randomIndex]);
+      reloadDataItem();
     }
   }, [data]);
 
-  return { data: randomItem, isPending, error };
+  const reloadDataItem = () => {
+    const randomIndex = Math.floor(Math.random() * data.length);
+    setRandomItem(data[randomIndex]);
+  };
+
+  return { data: randomItem, isPending, error, reloadDataItem };
 };
