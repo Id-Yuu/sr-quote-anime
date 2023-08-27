@@ -4,7 +4,7 @@ import { Quote } from "./components/quote";
 import { useFetch } from "./hooks/useFetch";
 
 function App() {
-  const { data, isPending, error } = useFetch();
+  const { data, isPending, error, reloadDataItem } = useFetch();
 
   const copyQuote = () => {
     navigator.clipboard.writeText(
@@ -30,6 +30,7 @@ function App() {
           />
           <div className="btn">
             <Button onClicks={copyQuote} text="Copy quote" />
+            <Button onClicks={reloadDataItem} text="#" />
           </div>
         </>
       )}
