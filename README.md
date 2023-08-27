@@ -24,7 +24,8 @@ npm run dev
 
 
 ### Tech Stack
-- Local DB.json
+- Local db.json
+- Json-Server
 - Axios
 - [ViteJs](https://vitejs.dev/)
 - React hooks
