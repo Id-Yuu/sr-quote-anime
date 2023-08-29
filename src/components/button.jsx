@@ -7,9 +7,6 @@ export const Button = (props) => {
       <button type="button" onClick={onClicks}>
         {text}
       </button>
-      <a href="/">
-        #
-      </a>
     </>
   );
 };
