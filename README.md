@@ -6,6 +6,7 @@ Simple way to Showing anime random quote, build with vite reactjs.
 ### Feature
 - Copy text
 - Refresh
+- Search Title Anime with Bing for searching anime on MyAnimeList
 
 ### Usage
 ```
